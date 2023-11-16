@@ -1,15 +1,346 @@
 <!-- views/layouts/main.handlebars -->
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/main.css">
-    <title>{{title}}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High Palm Motors</title>
+  <!-- Site core CSS -->
+  <link rel="stylesheet" href="https://use.typekit.net/faj6ojr.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="/css/main.css?e1d4e6b" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="http://localhost/webuyanycarflorida.com//apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="http://localhost/webuyanycarflorida.com//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="http://localhost/webuyanycarflorida.com//favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
+
 <body>
-    {{> header}}
-    {{{body}}}
+
+<div class="one column stackable ui grid">
+
+  <!-- Desktop View -->
+  <div class="row equal-height">
+  
+    <!-- Logo column (25%) -->
+    <button class="burger-menu ui segment icon button" onclick="toggleMenu()">
+      <i class="bars icon"></i>
+    </button>
+  
+    <div class="header-area logo four wide column">
+  
+      <!-- Mobile Navbar -->
+      <div class="ui segment vertical menu mobile-menu" id="mobile-menu" style="display: none;">
+        <a class="item" href="/">HOME</a>
+        <a class="item" href="/book-your-appointment">&nbsp;&nbsp;BOOK YOUR APPOINTMENT&nbsp;&nbsp;</a>
+        <a class="item" href="/how-it-works">HOW IT WORKS</a>
+        <a class="item" id="test" href="/contact-us">CONTACT US</a>
+        <script>
+          document.querySelectorAll('.item').forEach(link => {
+              if(link.href === window.location.href){
+                link.setAttribute('aria-current', 'page')
+            }
+          })
+        </script>    </div>
+  
+      <img src="/img/HPM_LOGO.png" alt="logo" id="logo">
+  
+      <!-- Navbar -->
+      <div class="header-navbar row ui equal-height" style="height: 54px">
+        <div class="ui secondary menu"></div>
+      </div>
+  
+      <!-- Filler space -->
+      <div class="header-filler second_row row equal-height"></div>
+  
+      <!-- Motto with icon -->
+      <div class="header-motto row equal-height"></div>
+  
+    </div>
+  
+  
+    <!-- Content column (75%) -->
+    <div class="header-area twelve wide column">
+  
+      <!-- Navbar -->
+      <div id="header-navbar" class="header-navbar row ui equal-height">
+        <div class="ui secondary menu">
+          <a class="item" href="/">HOME</a>
+          <a class="item" href="/book-your-appointment">&nbsp;&nbsp;BOOK YOUR APPOINTMENT&nbsp;&nbsp;</a>
+          <a class="item" href="/how-it-works">HOW IT WORKS</a>
+          <a class="item" id="test" href="/contact-us">CONTACT US</a>
+          <script>
+            document.querySelectorAll('.item').forEach(link => {
+                if(link.href === window.location.href){
+                  link.setAttribute('aria-current', 'page')
+              }
+            })
+          </script>  </div>
+      </div>
+      <!-- Filler space -->
+      <div class="header-filler second_row row equal-height"></div>
+  
+      <!-- Motto with icon -->
+      <div class="row">
+        <div class="header-motto ui grid">
+          <div class="twelve wide column" style="width: auto !important;">
+            <h2 id="motto">We buy any car and we pay the best price!</h2>
+          </div>
+          <div id="cash_img_container" class="column cash-container">
+            <img class="cash_img" alt="cash" src="/img/HPM_ICON_CASH.png"/>
+          </div>
+        </div>
+      </div>  </div>
+  
+  </div>  <!-- HOME -->
+<style>
+  .blue-background {
+    background-color: #1a91c2;
+  }
+</style>
+<div class="row equal-height blue-background">
+
+  <!-- Start here -->
+  <div class="form_container row">
+    <div class="first_column eight wide column">
+    </div>
+    <div class="form_box eight wide column">
+      <img class="start_img" alt="StartHere" src="/img/startHere.png">
+      <form class="horizontal-form">
+        <div class="form_row">
+          <label class="form_label" for="input1">VIN</label><br>
+          <input class="form_input" type="text" id="input1" name="input1">
+        </div>
+        <div class="form_row">
+          <label class="form_label" for="input2">MAKE</label><br>
+          <select class="form_input" id="input2" name="input2">
+            <!-- Populate this dropdown dynamically with manufacturers -->
+          </select>
+          <!--<input class="form_input" type="text" id="input2" name="input2">-->
+        </div>
+        <div class="form_row">
+          <label class="form_label" for="input3">MODEL</label><br>
+          <input class="form_input" type="text" id="input3" name="input3">
+        </div>
+        <div class="form_row">
+          <label class="form_label" for="input4">YEAR</label><br>
+          <input class="form_input" type="text" id="input4" name="input4">
+        </div>
+      </form>
+      <input type="submit" value="CONTINUE">
+    </div>
+  </div>
+
+  <!-- Guide & Customer Reviews -->
+  <div class="guideContainer">
+    <div class="main-container">
+      <div class="guideCustomer">
+        <div class="circle">
+          <div class="guide-text">
+            <svg class="svg_file" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="outline">
+                  <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="3"/>
+                  <feFlood flood-color="#002f6c" result="COLOR"/>
+                  <feComposite in="COLOR" in2="DILATED" operator="in" result="OUTLINE"/>
+                  <feMerge>
+                    <feMergeNode in="OUTLINE"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <text x="10" y="100" font-family="MyriadPro-Bold" fill="#fff" letter-spacing="1" filter="url(#outline)">
+                1.
+              </text>
+            </svg>
+            <svg class="svg_file" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="outline">
+                  <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="3"/>
+                  <feFlood flood-color="#002f6c" result="COLOR"/>
+                  <feComposite in="COLOR" in2="DILATED" operator="in" result="OUTLINE"/>
+                  <feMerge>
+                    <feMergeNode in="OUTLINE"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <text x="10" y="100" font-family="MyriadPro-Bold" fill="#fff" letter-spacing="1" filter="url(#outline)">
+                SEND US THE CAR DETAILS
+              </text>
+            </svg>
+          </div>
+          <img id="details-img" class="guide_img" src="/img/HPM_ICON_CAR DETAILS.png" alt="Image 1">
+        </div>
+        <div class="circle">
+          <div class="guide-text">
+            <svg class="svg_file" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="outline">
+                  <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="3"/>
+                  <feFlood flood-color="#002f6c" result="COLOR"/>
+                  <feComposite in="COLOR" in2="DILATED" operator="in" result="OUTLINE"/>
+                  <feMerge>
+                    <feMergeNode in="OUTLINE"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <text x="10" y="100" font-family="MyriadPro-Bold" fill="#fff" letter-spacing="1" filter="url(#outline)">
+                2.
+              </text>
+            </svg>
+            <svg class="svg_file" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="outline">
+                  <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="3"/>
+                  <feFlood flood-color="#002f6c" result="COLOR"/>
+                  <feComposite in="COLOR" in2="DILATED" operator="in" result="OUTLINE"/>
+                  <feMerge>
+                    <feMergeNode in="OUTLINE"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <text x="10" y="100" font-family="MyriadPro-Bold" fill="#fff" letter-spacing="1" filter="url(#outline)">
+                BOOK YOUR APPOINTMENT
+              </text>
+            </svg>
+          </div>
+          <img id="date-img" class="guide_img" src="/img/HPM_ICON_DATE.png" alt="Image 2">
+        </div>
+        <div class="circle">
+          <div class="guide-text">
+            <svg class="svg_file" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="outline">
+                  <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="3"/>
+                  <feFlood flood-color="#002f6c" result="COLOR"/>
+                  <feComposite in="COLOR" in2="DILATED" operator="in" result="OUTLINE"/>
+                  <feMerge>
+                    <feMergeNode in="OUTLINE"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <text x="10" y="100" font-family="MyriadPro-Bold" fill="#fff" letter-spacing="1" filter="url(#outline)">
+                3.
+              </text>
+            </svg>
+            <svg class="svg_file" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="outline">
+                  <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="3"/>
+                  <feFlood flood-color="#002f6c" result="COLOR"/>
+                  <feComposite in="COLOR" in2="DILATED" operator="in" result="OUTLINE"/>
+                  <feMerge>
+                    <feMergeNode in="OUTLINE"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <text x="10" y="100" font-family="MyriadPro-Bold" fill="#fff" letter-spacing="1" filter="url(#outline)">
+                GET YOUR CHECK
+              </text>
+            </svg>
+          </div>
+          <img id="check-img" class="guide_img" src="/img/HPM_ICON_CHECK.png" alt="Image 3">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Cards -->
+  <div class="card-row">
+    <div class="card">
+      <h2 class="card-title">E.Xample</h2>
+      <p class="card-text">“ I wanted a good car, instead I got a great one! “</p>
+      <p class="card-bottom">G.Reat</p>
+
+    </div>
+    <div class="card">
+      <h2 class="card-title">C.Ustomer</h2>
+      <p class="card-text">“ I wanted a good car, instead I got a great one! “</p>
+      <p class="card-bottom">S.Ervice</p>
+    </div>
+    <div class="card">
+      <h2 class="card-title">R.Eview</h2>
+      <p class="card-text">“ I wanted a good car, instead I got a great one! “</p>
+      <p class="card-bottom">E.Veryday</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const fetchDataFromApi = async () => {
+    try {
+      const response = await fetch('/api/manufacturers');
+      const data = await response.json();
+
+      // Now 'data' contains the JSON response from your server
+      // You can update your frontend logic to work with this data
+
+      // Get the "MAKE" dropdown element
+      const makeDropdown = document.getElementById('input2');
+
+      // Clear existing options
+      makeDropdown.innerHTML = '';
+
+      // Add a default option
+      const defaultOption = document.createElement('option');
+      defaultOption.text = 'Select Make';
+      makeDropdown.add(defaultOption);
+      console.log(data.response);
+
+      // Extract manufacturers from the nested structure
+      const manufacturers = data.Response.Results[0].Manufacturers;
+
+      // Add options for each manufacturer
+      manufacturers.forEach(manufacturer => {
+        const option = document.createElement('option');
+        option.value = manufacturer.Mfr_Name[0];
+        option.text = manufacturer.Mfr_Name[0];
+        makeDropdown.add(option);
+      });
+
+      // Update your UI or do other operations with the data
+    } catch (error) {
+      console.error('Error fetching data from API:', error.message);
+    }
+  };
+
+  // Call the function to fetch data when needed, e.g., on page load or in response to user actions
+  fetchDataFromApi();
+
+
+</script>
+  <div class="column footer">
+      <div class="footer-content">
+        <div class="footer-text">
+          <h3 class="footer-contact-title">CONTACT INFORMATION</h3>
+          <h3 class="footer-contact">EXAMPLE STREET 123,<br>
+            SOMEWHERE, OVER THERE<br>
+            012 01234<br><br></h3>
+          <h3 class="web-name footer-contact">WWW.BUYANYCARDPLACEHOLDER.COM</h3>
+        </div>
+        <img class="map_img" alt="testmap" src="/img/test_map.png">
+      </div>
+    </div>
+</div>
+
+
+<script>
+  function toggleMenu() {
+    var menu = document.getElementById("mobile-menu");
+    menu.style.display = menu.style.display === "none" ? "block" : "none";
+  }
+</script>
 </body>
 </html>
